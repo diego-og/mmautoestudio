@@ -517,8 +517,19 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 640px) {
-  .hero-media { max-width: 75%; }
-  .hero-img { transform: scale(1); }
+  .hero { padding-bottom: 32px; }
+  .hero-inner { flex-direction: column; align-items: stretch; }
+  .hero-text { padding-bottom: 0; }
+  .hero-media {
+    max-width: 68%;
+    width: 100%;
+    margin: 32px auto 0;
+    align-self: center;
+  }
+  .hero-img {
+    transform: none;
+    max-height: 480px;
+  }
   .site-nav {
     position: absolute;
     top: 68px;
