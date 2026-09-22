@@ -517,18 +517,23 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding-bottom: 32px; }
+  .hero { padding-bottom: 0; overflow: hidden; }
   .hero-inner { flex-direction: column; align-items: stretch; }
   .hero-text { padding-bottom: 0; }
   .hero-media {
-    max-width: 68%;
+    max-width: 85%;
     width: 100%;
-    margin: 32px auto 0;
+    height: 320px;
+    margin: 24px auto 0;
     align-self: center;
+    overflow: hidden;
   }
   .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
     transform: none;
-    max-height: 480px;
   }
   .site-nav {
     position: absolute;
