@@ -384,6 +384,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.98rem;
   color: #2A2F38;
 }
+.swipe-hint { display: none; }
 .testimonial cite {
   font-style: normal;
   font-weight: 600;
@@ -552,12 +553,53 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: flex; }
   .nav-cta { width: 100%; text-align: center; }
 
-  .services-grid { grid-template-columns: 1fr; }
   .other-services-grid { grid-template-columns: 1fr; }
+
+  /* Servicios principales: carrusel deslizable en vez de lista apilada */
+  .services-grid {
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin: 24px -24px 0;
+    padding: 0 24px 8px;
+    scrollbar-width: none;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .service-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
   .why-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
   .trust-logos { gap: 32px; }
+
+  /* Testimonios: carrusel deslizable en vez de lista apilada */
+  .swipe-hint {
+    display: block;
+    font-size: 0.82rem;
+    color: #8A93A0;
+    margin: -8px 0 0;
+  }
+  .swipe-hint-dark { color: rgba(255,255,255,0.5); }
+  .testimonials-grid {
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin: 32px -24px 0;
+    padding: 0 24px 8px;
+    scrollbar-width: none;
+  }
+  .testimonials-grid::-webkit-scrollbar { display: none; }
+  .testimonial {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
 }
 
 /* Accesibilidad: respeta reduce-motion */
